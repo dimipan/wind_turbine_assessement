@@ -11,7 +11,7 @@ The script stands for evaluating the relevant system created in MATLAB/Simulink!
 '''
 
 class SimplifiedAnalyticalModel:
-    def __init__(self):
+    def __init__(self, DENSITY, CL, GAMMA, DELTA, THETA, U_HUB, PSI, OMEGA, r, c):
         radians = np.pi / 180
         self.DENSITY = DENSITY          # [kg/m^3]
         self.CL = CL                    # DON'T KNOW
@@ -55,20 +55,3 @@ class SimplifiedAnalyticalModel:
         U_REL = self.airVelocityAirfoil()
         axial = 0.5 * self.DENSITY * (U_REL ** 2) * self.CL * ALPHA * self.c * np.cos(PHI)  # EQUATION 1
         return axial
-
-# KNOWN VALUES HERE
-DENSITY = 1.225     # [kg/m^3]
-CL = 2 * np.pi      # [DON'T KNOW]
-GAMMA = 10          # [degrees]
-DELTA = 3           # [degrees]
-THETA = 5           # [degrees]
-U_HUB = 10          # [m/sec]
-PSI = 50            # [degrees]
-OMEGA = 8           # [RPM]
-r = 38.5            # [m]
-c = 1               # [DON'T KNOW]
-
-# CALL THE CLASS AND RUN TO SEE RESULTS
-model = SimplifiedAnalyticalModel()
-output = model.axialComponent()
-print("FINAL RESULT IS = ", output)
