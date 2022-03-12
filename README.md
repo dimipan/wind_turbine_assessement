@@ -1,4 +1,4 @@
-# Wind turbine assessment repository
+# Wind turbine assessment repository (UNDER CONSTRUCTION...)
 Repository that contains :
 
 1) a MATLAB/SIMULINK file of wind turbine simplified 
